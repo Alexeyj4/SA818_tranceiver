@@ -1,7 +1,1 @@
-12.05.2023 16:33 Released Beta
-13.06.2023 19:24 Added settings autosave
-24.11.2023 15:32 Added "AT+SETTAIL=0"
-24.11.2023 17:17 Added channel width (12,5/25khz)
-24.11.2023 17:55 Added frames border
-24.11.2023 18:05 Changed text description for volume
-12.12.2023 19:16 Renamed to SA818S_config
+12.12.2023 21:54 Relesed Beta. Based on 1R_config project

@@ -1,4 +1,4 @@
-title="1Р конфигуратор v2.0"
+title="SA818S конфигуратор v2.0"
 
 from tkinter import *
 from tkinter import scrolledtext
@@ -66,7 +66,7 @@ def handshake():
     time.sleep(0.5)
     writeln("AT+DMOCONNECT")
     
-def write_rx(): #AT+DMOSETGROUP=0,134.0000,171.8500,0000,1,0000
+def write_config(): #AT+DMOSETGROUP=0,134.0000,171.8500,0000,1,0000
     open_com_port()
     write_settings()
     rx_freq=float(ent_rx_freq.get())
@@ -75,30 +75,35 @@ def write_rx(): #AT+DMOSETGROUP=0,134.0000,171.8500,0000,1,0000
     write("AT+DMOSETVOLUME=")
     writeln(str(volume))
     time.sleep(0.5)    
-    write("AT+DMOSETGROUP=")
-    write(str(width.get()))
-    write(",134.0000,")    
-    write(str('%.4f' % rx_freq))
-    write(",0000,")
-    write(str(squelch))
-    writeln(",0000")    
-
-def write_tx():
-    open_com_port()
-    write_settings()
-    tx_freq=float(ent_tx_freq.get())
     writeln("AT+SETTAIL=0")
     time.sleep(0.5)
     write("AT+DMOSETGROUP=")
     write(str(width.get()))
+#    write(",134.0000,")
     write(",")
     write(str('%.4f' % tx_freq))
-    writeln(",174.0000,0000,0,0000")
+    write(",")
+    write(str('%.4f' % rx_freq))
+    write(",0000,")
+    write(str(squelch))
+    writeln(",0000")
+
+##def write_tx():
+##    open_com_port()
+##    write_settings()
+##    tx_freq=float(ent_tx_freq.get())
+##    writeln("AT+SETTAIL=0")
+##    time.sleep(0.5)
+##    write("AT+DMOSETGROUP=")
+##    write(str(width.get()))
+##    write(",")
+##    write(str('%.4f' % tx_freq))
+##    writeln(",174.0000,0000,0,0000")
 
 window.title(title+" - "+port)
 
 frm_handshake=Frame(window, bd = 5, relief = RAISED)
-btn_handshake=Button(frm_handshake,text="Проверка программатора (подключите разъём). Должен быть ответ[+DMOCONNECT:0]",command=handshake)
+btn_handshake=Button(frm_handshake,text="Проверка программатора (подключите программатор). Должен быть ответ[+DMOCONNECT:0]",command=handshake)
 btn_handshake.pack()
 frm_handshake.pack(fill="both")
 
@@ -118,10 +123,10 @@ rb_width_25.pack()
 frm_width.pack(fill="both")
 
 frm_rx=Frame(window,  bd = 5, relief = RAISED)
-lbl_rx_freq=Label(frm_rx,text="Частота приёма ретранслятора:")
+lbl_rx_freq=Label(frm_rx,text="Частота приёма:")
 ent_rx_freq=Entry(frm_rx)                  
 ent_rx_freq.insert(0,rx_freq)
-btn_write_rx=Button(frm_rx,text="Запись настроек приёма (подключите разъём)",command=write_rx)
+#btn_write_rx=Button(frm_rx,text="Запись настроек приёма (подключите разъём)",command=write_rx)
 lbl_rx_freq.pack()
 ent_rx_freq.pack()
 lbl_volume=Label(frm_rx,text="Коэффициент преобразования модуляции (громкости) [0-8] (8-макс.громкость):")
@@ -129,19 +134,19 @@ lbl_volume.pack()
 ent_volume=Entry(frm_rx)                  
 ent_volume.insert(0,volume)
 ent_volume.pack()
-lbl_squelch=Label(frm_rx,text="Уровень включения ретранслятора [0-8] (0-всегда вкл.):")
+lbl_squelch=Label(frm_rx,text="Уровень включения (squelch) [0-8] (0-всегда вкл.):")
 lbl_squelch.pack()
 ent_squelch=Entry(frm_rx)                  
 ent_squelch.insert(0,squelch)
 ent_squelch.pack()
-btn_write_rx.pack()
+#btn_write_rx.pack()
 frm_rx.pack(fill="both")
 
 frm_tx=Frame(window,  bd = 5, relief = RAISED)
-lbl_tx_freq=Label(frm_tx,text="Частота передачи ретранслятора:")
+lbl_tx_freq=Label(frm_tx,text="Частота передачи:")
 ent_tx_freq=Entry(frm_tx)                  
 ent_tx_freq.insert(0,tx_freq)
-btn_write_tx=Button(frm_tx,text="Запись настроек передачи (подключите разъём)",command=write_tx)
+btn_write_tx=Button(frm_tx,text="Запись настроек (подключите программатор)",command=write_config)
 lbl_tx_freq.pack()
 ent_tx_freq.pack()
 btn_write_tx.pack()
