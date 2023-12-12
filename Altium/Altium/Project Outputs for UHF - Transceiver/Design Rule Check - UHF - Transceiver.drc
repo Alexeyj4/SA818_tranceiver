@@ -1,0 +1,84 @@
+Protel Design System Design Rule Check
+PCB File : C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc
+Date     : 13.11.2023
+Time     : 14:39:11
+
+Processing Rule : Clearance Constraint (Gap=0.125mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net +5V Between Track (190.017mm,88.186mm)(190.3mm,88.469mm) on Top Layer And Track (190.427mm,87.434mm)(190.427mm,89.6mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net +5V Between Track (221.6mm,82.925mm)(221.6mm,83.908mm) on Top Layer And Track (221.817mm,83.308mm)(223.94mm,83.308mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net +5V Between Track (221.6mm,81.975mm)(221.6mm,82.925mm) on Top Layer And Track (221.817mm,83.308mm)(223.94mm,83.308mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net +5V Between Via (221.6mm,82.925mm) from Top Layer to Bottom Layer And Track (221.817mm,83.308mm)(223.94mm,83.308mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net +5V Between Pad R4-2(221.6mm,83.908mm) on Top Layer And Track (221.817mm,83.308mm)(223.94mm,83.308mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net +5V Between Pad C6-1(192.075mm,89.6mm) on Top Layer And Track (192.7mm,90.175mm)(193.045mm,90.175mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net A1 Between Pad DA2-3(191.85mm,75.8mm) on Top Layer And Track (191.591mm,74.75mm)(191.825mm,74.984mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net AF Between Track (192.275mm,65.825mm)(192.275mm,72.716mm) on Top Layer And Track (192.05mm,73.2mm)(192.25mm,73mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net AF Between Pad R3-1(192.05mm,73.2mm) on Top Layer And Track (192.275mm,65.825mm)(192.275mm,72.716mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetD1_3 Between Track (188.385mm,71.515mm)(188.385mm,73.125mm) on Top Layer And Track (188.3mm,73.125mm)(189.431mm,74.256mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetD1_3 Between Track (190.75mm,73.2mm)(190.75mm,74.225mm) on Top Layer And Track (189.431mm,74.256mm)(207.037mm,74.256mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetD1_17 Between Pad TX-1(194.542mm,83.939mm) on Top Layer And Track (194.685mm,83.391mm)(196.917mm,81.158mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetHL1_3 Between Pad RDY-3(223.225mm,92.87mm) on Top Layer [Unplated] And Track (222.455mm,92.1mm)(222.952mm,92.597mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetHL1_1 Between Pad RDY-1(223.225mm,93.73mm) on Top Layer [Unplated] And Track (222.455mm,94.5mm)(222.952mm,94.003mm) on Top Layer 
+Rule Violations :14
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.1mm) (Max=10mm) (Preferred=0.125mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.15mm) (IsVia)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.15mm) (IsPAD)
+Rule Violations :0
+
+Processing Rule : Acute Angle Constraint (Minimum=35.000) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.3mm) (Max=5.9mm) (IsVia)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.6mm) (Max=5.9mm) (IsPad)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.2mm) (Max=5.9mm) (IsVia)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.05mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.15mm) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.15mm) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+   Violation between Net Antennae: Track (188.216mm,87.2mm)(189.391mm,87.2mm) on Top Layer 
+Rule Violations :1
+
+Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 15
+Waived Violations : 0
+Time Elapsed        : 00:00:03

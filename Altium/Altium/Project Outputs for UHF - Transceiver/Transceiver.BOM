@@ -1,0 +1,28 @@
+Bill of Material for 
+On 24.11.2023 at 9:41:49
+
+ Comment             Pattern     Quantity  Components
+------------------------------------------------------------------------------
+ ...                 RES_0603         2    R7, R8                                            
+ ...1%               RES_0603         1    R5                                                
+ ...nF               CAP_0603         1    C4                                                
+ 10nF                CAP_0603         1    C5                                                
+ 10TPB330M 10V 330uF  ±20% POSCAP_D12_D15_D15E_D2E_D2_D3L_D4    1    C1                                                
+ 10V 100uF CASE C    CAPPM6032X280N    1    C3                                                
+ 1M                  RES_0603         1    R4                                                
+ 3266W-1-103         3266W1103        1    R9                           3266W-1-103          
+ 47uF                CAP_0603         4    C6, C7, C8, C9                                    
+ 6V 220 uF CASE D    CAPPM7343X310N    1    C2                                                
+ B2B-PH-K-S (LF)(SN) B2BPHKSLFSN      1    X1                                                
+ Connector           1,27-1X3_straight    1    X5                                                
+ Connector           PLL1.27-2        1    X2                                                
+ HPI1260-680         HPI1260101       1    L1                                                
+ IRLML6401           IRLML6401        1    VT1                                               
+ KPTB-1612ESGC       KPTB1612ESGC     1    HL1                                               
+ LM2576HVR           KTT0005B         1    AD1                                               
+ LM386               LM386            1    DA2                                               
+ RS2227XN            *SOP50P490X110-10N    1    D2                                                
+ SA818S              SA818S           1    D1                                                
+ SMA-JR              HUBER-SUHNER_85 SMA-50-0-101/111 NE    1    X3                                                
+ SS34                DIOM7959X262N    1    VD5                                               
+ Î                   RES_0603         4    R1, R2, R3, R6                                    

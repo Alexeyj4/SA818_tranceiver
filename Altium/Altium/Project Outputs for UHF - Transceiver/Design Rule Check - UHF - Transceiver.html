@@ -1,0 +1,405 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD17\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">13.11.2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">14:39:11</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:03</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc" class="file"><acronym title="C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc">C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">15</td></tr>
+</table>
+</td>
+</table><a name="ID3T4ZOODNPZ3OL4H1345NJM3K0CDT5FKEKG5IKVB2IHOFFNQDGRVL"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKK5NMSCOD0L3C3UO040ZP1TPCIGO3PML2XGM3SM4OK54DNDZDREI">Clearance Constraint (Gap=0.125mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLXMLJ2NMKLHRIC5S4YBVHN2VMLEOJ1IQARW4GRJE5PDRS3EFRO0F">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKIMVW0ZMZL1HPTLFTQWGKFY4FG1RHJPZ5H5WL1HOECBDKFBWHLMO">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">14</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAVY5LGZ3IT5TJONFH00HYS4NGEYKQ2RNLAI3WSJ3WXLTOLQUEAVI">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDESRMQA34JPQVBK1Q1UHM30GK0EBQBVBUW3WARTOORNDSBVHQDZIB">Width Constraint (Min=0.1mm) (Max=10mm) (Preferred=0.125mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDL4PE2YUFLHB4G25RIKEER0SBDJBJOWWS2QIKUGEKGGRUHDL25CIK">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDY4NT1FMDAB4HEVYRVH3F3TX3SFJ1ABXVJBKKHTB22T4T2ACRV0TF">Minimum Annular Ring (Minimum=0.15mm) (IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0PGFF2POSSF5NT1LAB5N5UP0POUXPFVAW3X4MRXZUMDJPV3D4MD">Minimum Annular Ring (Minimum=0.15mm) (IsPAD)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDY3WCYHM0JNZGNCVWBHAMIDB0ZJRK342PQHRLZK2DWZ3AQUZU04C">Acute Angle Constraint (Minimum=35.000) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHZWOUDTJDJRILBFCVYKTLBHYKBMGF3Q3UA1OAQEDGZ3YYH0QIWRO">Hole Size Constraint (Min=0.3mm) (Max=5.9mm) (IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWJY5AI4KJ5VBC3KSNZ3ZRVPRXGNJM2PNKBUFXPH3B3ISDHRCY4MF">Hole Size Constraint (Min=0.6mm) (Max=5.9mm) (IsPad)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWWQ0W4PRLZHSPDEFIV0R3W4EXEXXRXILE0JEYRELOFTO3PKGGWVC">Hole Size Constraint (Min=0.2mm) (Max=5.9mm) (IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDH00MUHDEOPP4PUU2O0G5ETOYSENXLNXNPU1E1WHTLGD0OL1TURBH">Hole To Hole Clearance (Gap=0.05mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAZUDRWD5Y200DDKXSHI0YSU1XNMVSWPOFSOWX3FE1MSC4UX0JNNG">Minimum Solder Mask Sliver (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIBKDJRDQYOS4CHWDZGRP5SWHGLMAJEBZBZW3QOCF2YQYCM1SWSMK">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAIFRYFZ1AQ2CLPIPG1AE4NTF3FHCZVMYMPRJ42PCFQMQEHWJOCR">Silk To Solder Mask (Clearance=0.15mm) (Disabled)(IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZIYSTJVIF0I5D2GITWO0K3QL1JWJEWBDHKTPE4PIBIK3NRXRQC5N">Silk to Silk (Clearance=0.15mm) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDO2RCBCGLBYGJLHYNPCVETC5EWZMEG2PTEAX1NEEMVCBPVVCYJEH">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDH3V210RTF4RJN0UOMI3Q5STGAE41DUHRGLJPDENT1YP3LQ0DUAXI">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID13BPGWHR4K2ILCKNP1RDSTK3LPXPGNFN5SMJD3EFDBUTQ5QDJ5NF">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">15</td>
+</tr>
+</table><br><a name="IDKIMVW0ZMZL1HPTLFTQWGKFY4FG1RHJPZ5H5WL1HOECBDKFBWHLMO"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7392.126mil|Location2.X=7597.12mil|Location1.Y=3383.031mil|Location2.Y=3583.031mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7392.126mil|Location2.X=7597.12mil|Location1.Y=3383.031mil|Location2.Y=3583.031mil|Absolute=True">Un-Routed Net Constraint: Net +5V Between Track (190.017mm,88.186mm)(190.3mm,88.469mm) on Top Layer And Track (190.427mm,87.434mm)(190.427mm,89.6mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8624.409mil|Location2.X=8832.935mil|Location1.Y=3179.842mil|Location2.Y=3379.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8624.409mil|Location2.X=8832.935mil|Location1.Y=3179.842mil|Location2.Y=3379.842mil|Absolute=True">Un-Routed Net Constraint: Net +5V Between Track (221.6mm,82.925mm)(221.6mm,83.908mm) on Top Layer And Track (221.817mm,83.308mm)(223.94mm,83.308mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8624.409mil|Location2.X=8832.935mil|Location1.Y=3164.764mil|Location2.Y=3379.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8624.409mil|Location2.X=8832.935mil|Location1.Y=3164.764mil|Location2.Y=3379.842mil|Absolute=True">Un-Routed Net Constraint: Net +5V Between Track (221.6mm,81.975mm)(221.6mm,82.925mm) on Top Layer And Track (221.817mm,83.308mm)(223.94mm,83.308mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8624.409mil|Location2.X=8832.935mil|Location1.Y=3164.764mil|Location2.Y=3379.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8624.409mil|Location2.X=8832.935mil|Location1.Y=3164.764mil|Location2.Y=3379.842mil|Absolute=True">Un-Routed Net Constraint: Net +5V Between Via (221.6mm,82.925mm) from Top Layer to Bottom Layer And Track (221.817mm,83.308mm)(223.94mm,83.308mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8632.935mil|Location2.X=8832.935mil|Location1.Y=3179.842mil|Location2.Y=3387.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8632.935mil|Location2.X=8832.935mil|Location1.Y=3179.842mil|Location2.Y=3387.716mil|Absolute=True">Un-Routed Net Constraint: Net +5V Between Pad R4-2(221.6mm,83.908mm) on Top Layer And Track (221.817mm,83.308mm)(223.94mm,83.308mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7479.724mil|Location2.X=7686.614mil|Location1.Y=3443.307mil|Location2.Y=3650.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7479.724mil|Location2.X=7686.614mil|Location1.Y=3443.307mil|Location2.Y=3650.197mil|Absolute=True">Un-Routed Net Constraint: Net +5V Between Pad C6-1(192.075mm,89.6mm) on Top Layer And Track (192.7mm,90.175mm)(193.045mm,90.175mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7452.165mil|Location2.X=7652.165mil|Location1.Y=2852.138mil|Location2.Y=3055.709mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7452.165mil|Location2.X=7652.165mil|Location1.Y=2852.138mil|Location2.Y=3055.709mil|Absolute=True">Un-Routed Net Constraint: Net A1 Between Pad DA2-3(191.85mm,75.8mm) on Top Layer And Track (191.591mm,74.75mm)(191.825mm,74.984mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7468.898mil|Location2.X=7669.882mil|Location1.Y=2774.016mil|Location2.Y=2962.822mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7468.898mil|Location2.X=7669.882mil|Location1.Y=2774.016mil|Location2.Y=2962.822mil|Absolute=True">Un-Routed Net Constraint: Net AF Between Track (192.275mm,65.825mm)(192.275mm,72.716mm) on Top Layer And Track (192.05mm,73.2mm)(192.25mm,73mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7469.882mil|Location2.X=7669.882mil|Location1.Y=2762.822mil|Location2.Y=2964.173mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7469.882mil|Location2.X=7669.882mil|Location1.Y=2762.822mil|Location2.Y=2964.173mil|Absolute=True">Un-Routed Net Constraint: Net AF Between Pad R3-1(192.05mm,73.2mm) on Top Layer And Track (192.275mm,65.825mm)(192.275mm,72.716mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7315.063mil|Location2.X=7516.74mil|Location1.Y=2780.614mil|Location2.Y=2978.937mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7315.063mil|Location2.X=7516.74mil|Location1.Y=2780.614mil|Location2.Y=2978.937mil|Absolute=True">Un-Routed Net Constraint: Net NetD1_3 Between Track (188.385mm,71.515mm)(188.385mm,73.125mm) on Top Layer And Track (188.3mm,73.125mm)(189.431mm,74.256mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7409.842mil|Location2.X=7609.842mil|Location1.Y=2822.244mil|Location2.Y=3023.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7409.842mil|Location2.X=7609.842mil|Location1.Y=2822.244mil|Location2.Y=3023.475mil|Absolute=True">Un-Routed Net Constraint: Net NetD1_3 Between Track (190.75mm,73.2mm)(190.75mm,74.225mm) on Top Layer And Track (189.431mm,74.256mm)(207.037mm,74.256mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7564.083mil|Location2.X=7764.744mil|Location1.Y=3185.63mil|Location2.Y=3383.091mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7564.083mil|Location2.X=7764.744mil|Location1.Y=3185.63mil|Location2.Y=3383.091mil|Absolute=True">Un-Routed Net Constraint: Net NetD1_17 Between Pad TX-1(194.542mm,83.939mm) on Top Layer And Track (194.685mm,83.391mm)(196.917mm,81.158mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8677.638mil|Location2.X=8877.638mil|Location1.Y=3545.551mil|Location2.Y=3748.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8677.638mil|Location2.X=8877.638mil|Location1.Y=3545.551mil|Location2.Y=3748.425mil|Absolute=True">Un-Routed Net Constraint: Net NetHL1_3 Between Pad RDY-3(223.225mm,92.87mm) on Top Layer [Unplated] And Track (222.455mm,92.1mm)(222.952mm,92.597mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8677.638mil|Location2.X=8877.638mil|Location1.Y=3598.031mil|Location2.Y=3800.905mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8677.638mil|Location2.X=8877.638mil|Location1.Y=3598.031mil|Location2.Y=3800.905mil|Absolute=True">Un-Routed Net Constraint: Net NetHL1_1 Between Pad RDY-1(223.225mm,93.73mm) on Top Layer [Unplated] And Track (222.455mm,94.5mm)(222.952mm,94.003mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDO2RCBCGLBYGJLHYNPCVETC5EWZMEG2PTEAX1NEEMVCBPVVCYJEH"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver %D0%BD%D0%B5 %D0%BE%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%B0%D0%BD\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7398.689mil|Location2.X=7428.534mil|Location1.Y=3421.697mil|Location2.Y=3466.215mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Sharonov\Work\Repo\SA818_tranceiver не опубликован\Transceiver_new\Altium\UHF - Transceiver.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7398.689mil|Location2.X=7428.534mil|Location1.Y=3421.697mil|Location2.Y=3466.215mil|Absolute=True">Net Antennae: Track (188.216mm,87.2mm)(189.391mm,87.2mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
