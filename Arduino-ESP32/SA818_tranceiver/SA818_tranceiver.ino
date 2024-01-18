@@ -1,7 +1,8 @@
 #include <Oled.h>
 #include <Ble.h>
 #include <AbleButtons.h>
-const gpio_num_t btn_pin=GPIO_NUM_19; //иначе не работает выход из спящего режима, если просто int 19 указать
+const gpio_num_t btn_pin=GPIO_NUM_25; //иначе не работает выход из спящего режима, если просто int 19 указать
+const int OLEDVCC=4;
 
 Oled oled;
 Ble ble;
@@ -14,6 +15,8 @@ void buttonableCallback(Button::CALLBACK_EVENT, uint8_t);
 Button btn(int(btn_pin), buttonableCallback); // The button to check.
 
 void setup() { 
+  pinMode(OLEDVCC, OUTPUT);
+  digitalWrite(OLEDVCC,1);
   Serial.begin(115200);   
   ble.begin();
   oled.begin();

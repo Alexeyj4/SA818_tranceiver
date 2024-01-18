@@ -1,0 +1,31 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid 57287c46-42c6-4c2f-b7a1-fffabf773fba)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (hierarchical_label "3 (B)" (shape bidirectional) (at 139.7 71.12 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 5d89924a-69bc-4a5f-a881-bd3e4053e681)
+  )
+  (hierarchical_label "BTN-B" (shape bidirectional) (at 139.7 78.74 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid bb892344-4132-414c-8022-d21289488be5)
+  )
+  (hierarchical_label "1(A)" (shape bidirectional) (at 139.7 63.5 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid bdce7c97-1c5b-4e5c-8fc5-10fc4cbe64bf)
+  )
+  (hierarchical_label "2 (C)" (shape bidirectional) (at 139.7 67.31 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid e7380e66-8c92-45d5-b87d-587d3fbc8f0f)
+  )
+  (hierarchical_label "BTN-A" (shape bidirectional) (at 139.7 74.93 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid f6f879e9-244e-41c6-8893-1d25444c1330)
+  )
+)
