@@ -1,4 +1,4 @@
-#include <Oled.h>
+#include <Oled1_3.h>
 #include <Ble.h>
 #include <AbleButtons.h>
 const gpio_num_t btn_pin=GPIO_NUM_25; //иначе не работает выход из спящего режима, если просто int 19 указать
