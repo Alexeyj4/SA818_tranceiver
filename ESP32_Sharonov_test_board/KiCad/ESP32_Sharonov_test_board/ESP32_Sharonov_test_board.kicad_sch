@@ -584,7 +584,7 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 48d5f13d-8b5e-4f11-b30c-a8fefb657eaa)
   )
-  (text "Можно использовать, как \nдвунаправленные без ограничений:\nIO32,33\n\nЗанятые:\nIO16,17,18,19 - SA818S\nIO4 - OLED+\nIO25,26,27 - Энкодер\n\nтолько,как входы:\n(и нет pullup)\nIO34,35,36,39 \n\n\n"
+  (text "Можно использовать, как \nдвунаправленные без ограничений:\nIO18,33\n\nЗанятые:\nIO16,17,19,32 - SA818S\nIO4 - OLED+\nIO25,26,27 - Энкодер\n\nтолько,как входы:\n(и нет pullup)\nIO34,35,36,39 \n\n\n"
     (at 160.02 156.21 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 93218a54-efe3-4784-8fce-a18ac2a381a4)
