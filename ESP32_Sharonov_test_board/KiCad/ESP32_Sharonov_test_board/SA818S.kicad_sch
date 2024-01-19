@@ -1,0 +1,27 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid cbcf4352-b017-457d-a691-c7dc8a16e35b)
+
+  (paper "A4")
+
+  (lib_symbols
+  )
+
+
+  (hierarchical_label "TX (uart)" (shape output) (at 125.73 83.82 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 63a813dc-2967-4f73-aa3f-f6570f05f76d)
+  )
+  (hierarchical_label "RX (uart)" (shape input) (at 125.73 78.74 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 6a8a85b1-8d55-494a-87a8-0e44a1593fc0)
+  )
+  (hierarchical_label "RX1 (data)" (shape bidirectional) (at 125.73 88.9 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 6b25b8c8-0d4a-4ad9-85a3-5891443cc856)
+  )
+  (hierarchical_label "PTT" (shape bidirectional) (at 125.73 92.71 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid faa868f0-b3d3-4b97-8e42-53761c69fb24)
+  )
+)

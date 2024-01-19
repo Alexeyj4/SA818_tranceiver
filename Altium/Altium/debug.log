@@ -58,3 +58,6 @@
 [0116/122902:INFO:CONSOLE(0)] "The source list for Content Security Policy directive 'script-src' contains an invalid source: ''report-sample''. It will be ignored.", source: https://www.altium.com/ad-start/ (0)
 [0116/122902:INFO:CONSOLE(0)] "Unrecognized Content-Security-Policy directive 'worker-src'.
 ", source: https://www.altium.com/ad-start/ (0)
+[0119/182609:INFO:CONSOLE(0)] "The source list for Content Security Policy directive 'script-src' contains an invalid source: ''report-sample''. It will be ignored.", source: https://www.altium.com/ad-start/ (0)
+[0119/182609:INFO:CONSOLE(0)] "Unrecognized Content-Security-Policy directive 'worker-src'.
+", source: https://www.altium.com/ad-start/ (0)
