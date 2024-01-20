@@ -8,6 +8,10 @@
   )
 
 
+  (hierarchical_label "EN_V1 (audio on)" (shape output) (at 124.46 96.52 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 0fb7994d-69fb-4b2c-a8fa-2936bceeb533)
+  )
   (hierarchical_label "TX (uart)" (shape output) (at 125.73 83.82 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 63a813dc-2967-4f73-aa3f-f6570f05f76d)
