@@ -1,2 +1,0 @@
-//please define OLED_DISPLAY_TYPE
-#define OLED_DISPLAY_TYPE 96
