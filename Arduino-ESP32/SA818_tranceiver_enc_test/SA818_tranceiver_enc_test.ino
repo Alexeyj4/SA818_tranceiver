@@ -1,7 +1,8 @@
-#include <Oled1_3.h>
+#define OLED_DISPLAY_TYPE 96
+#include <Oled.h>
 #include <Ble.h>
 #include <ESP32Encoder.h>
-const gpio_num_t btn_pin=GPIO_NUM_25; //иначе не работает выход из спящего режима, если просто int 19 указать //encoder Button pin
+const gpio_num_t btn_pin=GPIO_NUM_25; //иначе не работает выход из спящего режима, если просто int 25 указать //encoder Button pin
 const int OLEDVCC_pin=4;
 const int enc_a_pin=27; //encoder A pin
 const int enc_b_pin=26; //encoder B pin
